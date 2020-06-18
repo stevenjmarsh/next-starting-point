@@ -8,8 +8,8 @@ A project template using next.js, react, material-ui, jest, eslint, storybook, p
 ## UI / Styling
 * Uses `material-ui` (along with @material-ui/styles, their included css-in-js solution)
 * Note, `styled-jsx`, also comes default with Next.js
-* Also, the `react-toast-notifications` package is included for simple user feedback
-  * https://jossmac.github.io/react-toast-notifications/
+* Also, the `notistack` package is included for simple user feedback
+  * https://iamhosseindhv.com/notistack
 
 ## Setup
 ### Folder Structure

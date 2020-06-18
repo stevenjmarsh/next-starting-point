@@ -3,9 +3,8 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ToastProvider } from "react-toast-notifications";
 
-import { theme } from "_helpers";
+import { theme, SnackbarProviderWrapper } from "_helpers";
 
 //
 // Set up a custom render, to include ThemeProvider
@@ -16,9 +15,7 @@ const ProviderWrapper = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <ToastProvider placement="bottom-center" autoDismiss autoDismissTimeout={3000}>
-        {children}
-      </ToastProvider>
+      <SnackbarProviderWrapper>{children}</SnackbarProviderWrapper>
     </ThemeProvider>
   );
 };

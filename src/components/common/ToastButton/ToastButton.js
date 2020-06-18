@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import { useSnackbar } from "notistack";
 
-import { withToast } from "_helpers";
+const ToastButton = () => {
+  const { enqueueSnackbar } = useSnackbar();
 
-const ToastButton = ({ addToast }) => {
   const showToast = () => {
-    addToast("Your information has been sent!", { appearance: "success" });
+    enqueueSnackbar("Yay, toast!", { variant: "success" });
   };
 
   return (
@@ -15,4 +16,4 @@ const ToastButton = ({ addToast }) => {
   );
 };
 
-export default withToast(ToastButton);
+export default ToastButton;
