@@ -4,9 +4,8 @@ import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { ToastProvider } from "react-toast-notifications";
 
-import { theme } from "_helpers";
+import { theme, SnackbarProviderWrapper } from "_helpers";
 
 addParameters({
   viewport: { viewports: INITIAL_VIEWPORTS },
@@ -36,9 +35,7 @@ addDecorator(storyFn => (
     >
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <ToastProvider placement="bottom-center" autoDismiss autoDismissTimeout={3000}>
-          {storyFn()}
-        </ToastProvider>
+        <SnackbarProviderWrapper>{storyFn()}</SnackbarProviderWrapper>
       </ThemeProvider>
     </div>
     <div id="app-portal-1" />

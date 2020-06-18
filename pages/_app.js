@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ToastProvider } from "react-toast-notifications";
 
-import { theme } from "_helpers";
+import { theme, SnackbarProviderWrapper } from "_helpers";
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -23,9 +22,9 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <ToastProvider placement="bottom-center" autoDismiss autoDismissTimeout={3000}>
+        <SnackbarProviderWrapper>
           <Component {...pageProps} />
-        </ToastProvider>
+        </SnackbarProviderWrapper>
       </ThemeProvider>
     </>
   );
